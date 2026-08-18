@@ -1,15 +1,54 @@
 body{
 background-color: #ffe9c7;
+margin: 0%;
+padding: 0px;
 }
 #back{
 border: 3px solid;
 width: fit-content;
 padding:10px;
 border-radius: 15px;
-
+background-color: #ffe9c7;
+margin: 10px;
 font-size: 20px;
+}
+#sna{
+    background-color: #ffce84;
+padding: 1px;
+margin-bottom: 10px;
+border-bottom: solid;
 }
 #name{
     text-align: center;
 font-size: 40px;
+  font-family: "Bubblegum Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+border:solid;
+width: fit-content;
+margin: auto;
+border-radius: 20px;
+padding: 20px;
+}
+.add{
+    font-size:30px;
+  font-family: "Sigmar", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 10px;
+}
+.top{
+  font-family: "Bubblegum Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+margin: 10px;
+
+}
+#start{
+    border:solid 2px;
+    border-radius: 15px;
+    width: fit-content;
+    font-size: 40px;
+    padding:10px;
+    margin: auto;
 }
