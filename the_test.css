@@ -7,4 +7,33 @@ body{
     top:35%;
     transform: translate(-50%, -50%);
     font-size: 100px;
+    display: block;
+}
+.keyboard{
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 0px;
+    border: 4px solid;
+    padding: 20px;
+}
+.lineone{
+    display: flex;
+    gap:10px;
+    justify-content: center;
+}
+.linetwo{
+    display: flex;
+    justify-content: center;
+    gap:10px;
+}
+.linethree{
+    display: flex;
+   justify-content: center;
+   gap:10px;
+}
+.keys{
+    
 }
