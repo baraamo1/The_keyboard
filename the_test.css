@@ -2,6 +2,9 @@ body{
     background-color: #ffe9c7;
 }
 #count{
-    text-align: center;
-    vertical-align:middle;
+    position: absolute;
+    left: 50%;
+    top:35%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
 }
