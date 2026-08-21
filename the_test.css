@@ -15,25 +15,28 @@ body{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    line-height: 0px;
-    border: 4px solid;
+    line-height: 30px;
+    border: 2px solid;
+    border-radius: 20px;
+    width: 70%;
+    height: 30%;
     padding: 20px;
 }
 .lineone{
     display: flex;
-    gap:10px;
+    gap:37px;
     justify-content: center;
 }
 .linetwo{
     display: flex;
     justify-content: center;
-    gap:10px;
+    gap:37px;
 }
 .linethree{
     display: flex;
    justify-content: center;
-   gap:10px;
+   gap:37px;
 }
 .keys{
-    
+    border: ;
 }
