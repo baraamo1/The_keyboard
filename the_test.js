@@ -1,14 +1,17 @@
 let counter = document.getElementById("count");
 let keyboard = document.getElementById("keyboard");
 let sec = 3;
+
 let tiemer = document.getElementById("timer");
 let wroten = document.getElementById("wroten");
 let down = 60;
 let the_word = document.getElementById("the_word")
+let keys = document.querySelectorAll(".keys");
+let the_letter = 0;
 counter.textContent = sec;
 keyboard.style.display = "none";
 tiemer.textContent = down;
-let rndwords = [
+let randwords = [
     "WATER",
     "HAND",
     "MONKEY",
@@ -35,7 +38,9 @@ let rndwords = [
     "GAME",
     "BALL"
 ]
-
+let random = Math.floor(
+    Math.random() * 25
+)
 const timer = setInterval(() => {
   if (sec > 1) {
     sec = sec - 1;
@@ -44,7 +49,8 @@ const timer = setInterval(() => {
     counter.style.display = "none";
     clearInterval(timer);
     keyboard.style.display = "block ";
-        the_word.style.display = "block";
+    the_word.style.display = "block";
+    wroten.style.display = "block"
     sec --
   }
 }, 1000);
@@ -58,3 +64,24 @@ const downtime = setInterval(() => {
   }
 }
 }, 1000);
+the_word.textContent = randwords[random]
+
+
+
+
+
+document.addEventListener("keydown", (event) => {
+
+    if(event.key === "ArrowRight"){
+        the_letter ++
+        wroten.textContent = keys[the_letter].textContent;
+    }else if(event.key === "ArrowLeft"){
+         the_letter --
+        wroten.textContent = keys[the_letter].textContent;
+    }
+}
+
+
+
+
+)
