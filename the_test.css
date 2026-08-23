@@ -11,15 +11,26 @@ body{
 }
 #the_word{
     text-align: center;
-    margin-top: 70px;
+    margin-top: -50px;
     font-size: 40px;
+    display: none;
 }
 #timer{
     border:2px solid;
     width: fit-content;
     padding: 15px 25px;
     border-radius: 12px;
+
 }
+#wroten{
+    display: none;
+    border: dashed;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 15px;
+margin: auto;
+}
+
 .keyboard{
 
     position: absolute;
