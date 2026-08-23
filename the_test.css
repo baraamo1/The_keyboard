@@ -35,30 +35,33 @@ margin: auto;
 
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 70%;
     transform: translate(-50%, -50%);
     line-height: 30px;
     border: 2px solid;
     border-radius: 20px;
-    width: 70%;
-    height: 30%;
+    width:fit-content;
+    
     padding: 20px;
 }
 .lineone{
     display: flex;
-    gap:37px;
+    gap:17px;
     justify-content: center;
 }
 .linetwo{
     display: flex;
     justify-content: center;
-    gap:37px;
+    gap:17px;
 }
 .linethree{
     display: flex;
    justify-content: center;
-   gap:37px;
+   gap:17px;
 }
 .keys{
     border:none ;
+    border-radius: 10px;
+    padding: 20px 20px;
+    margin: 0px;
 }

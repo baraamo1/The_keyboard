@@ -7,7 +7,7 @@ let wroten = document.getElementById("wroten");
 let down = 60;
 let the_word = document.getElementById("the_word")
 let keys = document.querySelectorAll(".keys");
-let the_letter = 0;
+let the_letter = -1;
 counter.textContent = sec;
 keyboard.style.display = "none";
 tiemer.textContent = down;
@@ -73,12 +73,27 @@ the_word.textContent = randwords[random]
 document.addEventListener("keydown", (event) => {
 
     if(event.key === "ArrowRight"){
+
+      if(the_letter < 25){
         the_letter ++
+         keys[the_letter].style.border = "solid" ;
         wroten.textContent = keys[the_letter].textContent;
-    }else if(event.key === "ArrowLeft"){
-         the_letter --
-        wroten.textContent = keys[the_letter].textContent;
+        keys[the_letter - 1].style.border = "none"
+      }
     }
+        
+        
+        
+        
+        
+        
+        if(event.key === "ArrowLeft"){
+            if(the_letter > 0){
+         the_letter --
+         keys[the_letter].style.border = "solid" ;
+         keys[the_letter +1 ].style.border = "none"
+        wroten.textContent = keys[the_letter].textContent;
+    }}
 }
 
 
