@@ -9,6 +9,17 @@ body{
     font-size: 100px;
     display: block;
 }
+#the_word{
+    text-align: center;
+    margin-top: 70px;
+    font-size: 40px;
+}
+#timer{
+    border:2px solid;
+    width: fit-content;
+    padding: 15px 25px;
+    border-radius: 12px;
+}
 .keyboard{
 
     position: absolute;
@@ -38,5 +49,5 @@ body{
    gap:37px;
 }
 .keys{
-    border: ;
+    border:none ;
 }
