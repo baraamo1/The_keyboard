@@ -3,6 +3,7 @@ let keyboard = document.getElementById("keyboard");
 let sec = 3;
 let savedletters = []
 let letternum = 0
+let imgno = document.getElementById("no")
 let tiemer = document.getElementById("timer");
 let wroten = document.getElementById("wroten");
 let down = 60;
@@ -88,9 +89,12 @@ document.addEventListener("keydown", (event) => {
     }
         
         
-         if(event.key === "Enter"){
-            savedletters[the_letter] = keys[the_letter].textContent;
-            wroten.textContent = `${savedletters[the_letter]}`
+         if(event.key === "Enter" && the_letter != -1){
+
+            savedletters[letternum] = keys[the_letter].textContent;
+            letternum ++
+            
+            wroten.textContent = savedletters.join("")
         }
         
         
@@ -101,7 +105,6 @@ document.addEventListener("keydown", (event) => {
          the_letter --
          keys[the_letter].style.border = "solid" ;
          keys[the_letter +1 ].style.border = "none"
-        wroten.textContent = keys[the_letter].textContent;
     }}
 }
 
@@ -109,3 +112,9 @@ document.addEventListener("keydown", (event) => {
 
 
 )
+document.addEventListener("click", (event) => {
+imgno.style.left = `${event.clientX}px`;
+imgno.style.top = `${event.clientY}px`;
+    imgno.style.display = "block"
+
+});

@@ -2,6 +2,7 @@ body{
 background-color: #ffe9c7;
 margin: 0%;
 padding: 0px;
+cursor: none;
 }
 #back{
 border: 3px solid;
@@ -11,6 +12,13 @@ border-radius: 15px;
 background-color: #ffe9c7;
 margin: 10px;
 font-size: 20px;
+}
+
+#no{
+    width: 40px;
+    display: none;
+    position: absolute;
+    transform: translate(-50% ,-50%);
 }
 #sna{
     background-color: #ffce84;

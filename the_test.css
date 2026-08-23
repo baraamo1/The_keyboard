@@ -1,5 +1,6 @@
 body{
     background-color: #ffe9c7;
+    cursor: none;
 }
 #count{
     position: absolute;
@@ -21,6 +22,12 @@ body{
     padding: 15px 25px;
     border-radius: 12px;
 
+}
+#no{
+    width: 40px;
+    display: none;
+    position: absolute;
+    transform: translate(-50% ,-50%);
 }
 #wroten{
     display: none;
