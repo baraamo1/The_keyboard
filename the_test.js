@@ -1,7 +1,8 @@
 let counter = document.getElementById("count");
 let keyboard = document.getElementById("keyboard");
 let sec = 3;
-
+let savedletters = []
+let letternum = 0
 let tiemer = document.getElementById("timer");
 let wroten = document.getElementById("wroten");
 let down = 60;
@@ -76,19 +77,27 @@ document.addEventListener("keydown", (event) => {
 
       if(the_letter < 25){
         the_letter ++
+        
          keys[the_letter].style.border = "solid" ;
-        wroten.textContent = keys[the_letter].textContent;
         keys[the_letter - 1].style.border = "none"
+
+       
+
+
       }
     }
         
         
-        
+         if(event.key === "Enter"){
+            savedletters[the_letter] = keys[the_letter].textContent;
+            wroten.textContent = `${savedletters[the_letter]}`
+        }
         
         
         
         if(event.key === "ArrowLeft"){
             if(the_letter > 0){
+                
          the_letter --
          keys[the_letter].style.border = "solid" ;
          keys[the_letter +1 ].style.border = "none"
