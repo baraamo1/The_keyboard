@@ -1,5 +1,5 @@
 
-    
+
 document.addEventListener("keydown", (event) => {
 if(event.key === "Enter")
     window.location.href = "test.html";
