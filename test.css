@@ -20,11 +20,24 @@ font-size: 20px;
     position: absolute;
     transform: translate(-50% ,-50%);
 }
+
+#info{
+    text-align: center;
+    margin: auto;
+}
+b{
+    border:solid 1px;
+    margin: 3px;
+    padding: 5px;
+    border-radius: 15px;
+}
 #sna{
     background-color: #ffce84;
 padding: 1px;
 margin-bottom: 10px;
 border-bottom: solid;
+display: flex;
+align-items: center;
 }
 #name{
     text-align: center;

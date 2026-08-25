@@ -2,6 +2,7 @@ let counter = document.getElementById("count");
 let keyboard = document.getElementById("keyboard");
 let sec = 3;
 let savedletters = []
+let submit = document.getElementById("submit") 
 let letternum = 0
 let imgno = document.getElementById("no")
 let tiemer = document.getElementById("timer");
@@ -76,7 +77,10 @@ document.addEventListener("keydown", (event) => {
 
     if(event.key === "ArrowRight"){
 
-      if(the_letter < 25){
+      if(the_letter < 27 ){
+
+
+
         the_letter ++
         
          keys[the_letter].style.border = "solid" ;
@@ -84,12 +88,18 @@ document.addEventListener("keydown", (event) => {
 
        
 
+        if (the_letter == 26 ){
+         submit.style.border = "solid" ;
+        keys[the_letter - 1].style.border = "none"
+        }
+       
+
 
       }
     }
         
         
-         if(event.key === "Enter" && the_letter != -1){
+         if(event.key === "Enter" && the_letter != -1 && the_letter != 26 && the_letter != 27){
 
             savedletters[letternum] = keys[the_letter].textContent;
             letternum ++
@@ -97,8 +107,27 @@ document.addEventListener("keydown", (event) => {
             wroten.textContent = savedletters.join("")
         }
         
+        if(event.key === "Enter" && the_letter == 26){
+           random = Math.floor(
+    Math.random() * 25
+    )
+    the_word.textContent = randwords[random]
+
+        }
         
-        
+
+
+        if(event.key === "Enter" && the_letter == 27){
+
+
+
+        }
+
+
+
+
+
+
         if(event.key === "ArrowLeft"){
             if(the_letter > 0){
                 
