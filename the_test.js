@@ -1,8 +1,11 @@
 let counter = document.getElementById("count");
 let keyboard = document.getElementById("keyboard");
+let wroted_words = document.getElementById("wroted_words");
+let correct_words = document.getElementById("correct_words");
+let wrong_words = document.getElementById("wrong_words");
+let results = document.getElementById("results")
 let sec = 3;
 let savedletters = [];
-let submit = document.getElementById("submit");
 let letternum = 0;
 let numberOfQs = 0;
 let correct = 0;
@@ -16,6 +19,7 @@ let keys = document.querySelectorAll(".keys");
 let the_letter = -1;
 counter.textContent = sec;
 keyboard.style.display = "none";
+results.style.display = "none";
 tiemer.textContent = down;
 let randwords = [
   "WATER",
@@ -60,14 +64,28 @@ const timer = setInterval(() => {
 }, 1000);
 const downtime = setInterval(() => {
   if (sec == 0) {
-    if (down > 1) {
+    if (down > 0) {
       down = down - 1;
       tiemer.textContent = down;
-    } else if (down == 1) {
+    } else if (down == 0) {
+      keyboard.style.display = "none"
+      the_word.style.display = "none"
+       wroten.style.display = "none"
+       correct_words.textContent = `Correct words :${correct}`
+       wrong_words.textContent = `Wrong words :${wrong}`
+       wroted_words.textContent = `Num. of wrote words :${numberOfQs}`
+       results.style.display = "block";
+
       clearInterval(downtime);
     }
   }
 }, 1000);
+
+
+
+
+
+
 the_word.textContent = randwords[random];
 
 document.addEventListener("keydown", (event) => {
@@ -78,7 +96,7 @@ document.addEventListener("keydown", (event) => {
       keys[the_letter].style.border = "solid";
       keys[the_letter - 1].style.border = "none";
 
-      if (the_letter == 27) {
+      if (the_letter == 28) {
         submit.style.border = "solid";
         keys[the_letter - 1].style.border = "none";
       }
@@ -89,7 +107,8 @@ document.addEventListener("keydown", (event) => {
     event.key === "Enter" &&
     the_letter != -1 &&
     the_letter != 26 &&
-    the_letter != 27
+    the_letter != 27 &&
+    the_letter != 28
   ) {
     savedletters[letternum] = keys[the_letter].textContent;
     letternum++;
@@ -97,7 +116,7 @@ document.addEventListener("keydown", (event) => {
     wroten.textContent = savedletters.join("");
   }
   //next
-  if (event.key === "Enter" && the_letter == 26) {
+  if (event.key === "Enter" && the_letter == 27) {
     if (wroten.textContent == randwords[random]) {
       correct ++;
       console.log(`corrict = ${correct}`);
@@ -108,14 +127,13 @@ document.addEventListener("keydown", (event) => {
       wrong ++;
 console.log(`WRONGE = ${wrong}`) 
     }
-
+    numberOfQs ++
     random = Math.floor(Math.random() * 25);
     the_word.textContent = randwords[random];
+    savedletters = []
+    wroten.textContent = ""
   }
 
-  //submit
-  if (event.key === "Enter" && the_letter == 27) {
-  }
 
   if (event.key === "ArrowLeft") {
     if (the_letter > 0) {
@@ -124,6 +142,16 @@ console.log(`WRONGE = ${wrong}`)
       keys[the_letter + 1].style.border = "none";
     }
   }
+
+//del
+
+if(event.key == "Enter" && the_letter == 26){
+  wroten.textContent = wroten.textContent.slice(0, -1)
+}
+
+
+
+
 });
 document.addEventListener("click", (event) => {
   imgno.style.left = `${event.clientX}px`;
