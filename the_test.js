@@ -75,7 +75,11 @@ const downtime = setInterval(() => {
        wrong_words.textContent = `Wrong words :${wrong}`
        wroted_words.textContent = `Num. of wrote words :${numberOfQs}`
        results.style.display = "block";
-
+       document.addEventListener("keydown", (event) => {
+          if(event.key == "Enter"){
+            window.location.href = "test.html"
+          }
+       })
       clearInterval(downtime);
     }
   }
