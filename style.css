@@ -1,6 +1,13 @@
 body{
     background-color: #ffe9c7;
     cursor: none;
+
+}
+p{
+  font-family: "Chivo Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 #head{
     text-align: center;

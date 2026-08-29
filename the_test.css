@@ -2,6 +2,13 @@ body{
     background-color: #ffe9c7;
     cursor: none;
     margin: 0;
+
+}
+p{
+      font-family: "Chivo Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 #count{
     position: absolute;
