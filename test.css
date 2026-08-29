@@ -7,7 +7,7 @@ cursor: none;
 }
 
 #back{
-border: 10px solid;
+border: 2px solid;
 width: fit-content;
 padding:10px;
 border-radius: 15px;
@@ -68,7 +68,7 @@ margin: 10px;
 
 }
 #start{
-    border:solid 2px;
+    border:solid 10px;
     border-radius: 15px;
     width: fit-content;
     font-size: 40px;

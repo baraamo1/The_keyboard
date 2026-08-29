@@ -1,7 +1,8 @@
 let back = document.getElementById("back")
 let start = document.getElementById("start")
 console.log("TEST JS WORKING");
-let change = 2
+let change = 1
+
 document.addEventListener("keydown", (event) => {
     if (event.key == "ArrowRight" || event.key == "ArrowLeft"){
         change ++
