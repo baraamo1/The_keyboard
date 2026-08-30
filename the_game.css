@@ -1,0 +1,38 @@
+
+body{
+    background-color: #ffe9c7;
+    cursor: none;
+    margin: 0;
+     overflow-x: hidden;
+}
+#sna{
+    background-color: #ffce84;
+padding: 1px;
+margin-bottom: 10px;
+border-bottom: solid;
+display: flex;
+align-items: center;
+}
+#info{
+    text-align: center;
+    margin: auto;
+}
+.all_botton{
+    display: flex;
+    margin: 0px;
+
+}
+#ground1{
+    position: absolute;
+    margin: 0px;
+}
+#ground2{
+    position: absolute;
+    margin: 0px;
+    left: 30%;
+}
+#ground3{
+    position: absolute;
+    margin: 0px;
+    left: 60%;
+}

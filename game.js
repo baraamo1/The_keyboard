@@ -24,7 +24,7 @@ back.style.border = "2px solid black";
    window.location.href = "index.html"
 back.style.border = "10px solid black";
 }else{
-    window.location.href = ""
+    window.location.href = "the_game.html"
 }
 }
 })
