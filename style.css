@@ -28,6 +28,11 @@ p{
     background-color: orangered;
     border-radius: 16px;
 }
+#game_img{
+        width: 200px;
+    background-color: #9DD241;
+    border-radius: 16px;
+}
 .cat{
     border: 3px solid;
     width: fit-content;
@@ -38,9 +43,29 @@ p{
     background-color: orangered;
     width: 250px;
 }
+.cat2{
+        border: 3px solid;
+    width: fit-content;
+    border-radius:20px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #9DD241;
+    width: 250px;
+}
 #select{
 font-size: 20px;
 border: 10px solid;
+border-radius: 15px;
+padding: 15px;
+width:164px ;
+margin: 0;
+text-align: center;
+background-color: #ffe9c7;
+}
+#select2{
+    font-size: 20px;
+border: 2px solid;
 border-radius: 15px;
 padding: 15px;
 width:164px ;
