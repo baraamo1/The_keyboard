@@ -36,3 +36,47 @@ align-items: center;
     margin: 0px;
     left: 60%;
 }
+
+#keyboard{
+
+    display: flex;
+    position: absolute;
+    top: 77%;
+    left:50%;
+
+    flex-direction: column;
+
+transform: translateX(-50%);
+}
+#all_c {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 155px;
+    width: 100%;
+}
+#boom1{
+    width: 200px;
+}
+#boom2{
+    width: 200px;
+
+    transform: scaleX(-1);
+
+}
+.keys{
+
+    padding: 5PX;
+    border-radius: 10PX;
+}
+#line_one{
+    display: flex;
+    gap:10px
+}
+#line_two{
+    display: flex;
+    gap:10px
+}
+.the_shoot{
+    width: 70px;
+}
