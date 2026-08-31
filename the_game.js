@@ -1,4 +1,4 @@
-let imgno = document.getElementById("no")
+let imgno = document.getElementById("no");
 const shoot2 = document.querySelectorAll(".the_shoot2");
 const shoot1 = document.querySelectorAll(".the_shoot");
 let keys = document.querySelectorAll(".keys");
@@ -9,6 +9,7 @@ let random = Math.floor(
   Math.random() * 26
 )
 function moveShoot() {
+
     x -= 0.25;
     shoot2[random].style.left = x + "%";
 if (x > 25){
@@ -16,11 +17,28 @@ if (x > 25){
 }
 if(x == 25){
   shoot2[random].style.display = "none"
+       random = Math.floor(
+  Math.random() * 26
+)
+x = 75 
 }
 
+shoot2[random].style.display = "block";
 
     requestAnimationFrame(moveShoot);
+
 }
+
+
+
+
+moveShoot();
+
+
+
+
+
+
 let x2 = 25
 
 
@@ -45,8 +63,12 @@ function moveShootYou(shootNumber) {
 }
 
 
+const downtime = setInterval(() => {
+  
 
-
+}, 1000);
+//clearInterval(downtime);
+    
 
 
 
@@ -126,4 +148,3 @@ document.addEventListener("click", (event) => {
 
 
 
-moveShoot();
