@@ -22,31 +22,32 @@ align-items: center;
 .all_botton{
     display: none;
     margin: 0px;
-
 }
 #ground1{
     position: absolute;
     margin: 0px;
-    
+        bottom: 1px;
+
 }
 #ground2{
     position: absolute;
     margin: 0px;
     left: 30%;
-    
+    bottom: 1px;
 }
 #ground3{
     position: absolute;
     margin: 0px;
     left: 60%;
-    
+        bottom: 1px;
+
 }
 
 #keyboard{
 
     display: flex;
     position: absolute;
-    top: 77%;
+    top: 73%;
     left:50%;
 
     flex-direction: column;
