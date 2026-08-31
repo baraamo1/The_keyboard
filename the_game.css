@@ -20,23 +20,26 @@ align-items: center;
     margin: auto;
 }
 .all_botton{
-    display: flex;
+    display: none;
     margin: 0px;
 
 }
 #ground1{
     position: absolute;
     margin: 0px;
+    
 }
 #ground2{
     position: absolute;
     margin: 0px;
     left: 30%;
+    
 }
 #ground3{
     position: absolute;
     margin: 0px;
     left: 60%;
+    
 }
 
 #keyboard{
@@ -57,19 +60,42 @@ transform: translateX(-50%);
     bottom: 155px;
     width: 100%;
 }
+#count{
+    position: absolute;
+    left: 50%;
+    top:35%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    display: block;
+        cursor: none;
+
+}
 #boom1{
     width: 200px;
+     display: none;
+
 }
 #boom2{
     width: 200px;
-
+     display: none;
     transform: scaleX(-1);
+
+}
+#timere{
+    border:2px solid;
+    width: fit-content;
+    padding: 15px 25px;
+    border-radius: 12px;
+       cursor: none;
 
 }
 .keys{
 
     padding: 5PX;
     border-radius: 10PX;
+}
+#keyboard{
+    display: none;
 }
 #line_one{
     display: flex;
