@@ -67,14 +67,16 @@ document.addEventListener("keydown", (event) => {
 
 if (event.key === "Enter") {
 
+    if (num > 0 && save[num - 1] === the_letter) {
+      return;
+    }
     shoot1[the_letter].style.display = "block";
-
     if (num > 0) {
-        shoot1[save[num - 1]].style.display = "none";
+      shoot1[save[num - 1]].style.display = "none";
     }
 
     save[num] = the_letter;
-     x2 = 25;
+    x2 = 25;
     moveShootYou(save[num]);
 
     num++;
