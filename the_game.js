@@ -4,84 +4,54 @@ const shoot1 = document.querySelectorAll(".the_shoot");
 let keys = document.querySelectorAll(".keys");
 let the_letter = -1;
 let x = 75;
-let num = 0
-let random = Math.floor(
-  Math.random() * 26
-)
+let num = 0;
+let random = Math.floor(Math.random() * 26);
 function moveShoot() {
+  x -= 0.25;
 
-    x -= 0.25;
+  shoot2[random].style.left = x + "%";
 
-    shoot2[random].style.left = x + "%";
+  if (x > 25 && !isTouching(the_letter, random)) {
+    shoot2[random].style.display = "block";
+  }
 
-    if (x > 25 && !isTouching(the_letter, random)) {
-     shoot2[random].style.display = "block";
-    }
+  if (isTouching(the_letter, random)) {
+    shoot1[the_letter].style.display = "none";
 
-    if (isTouching(the_letter, random)) {
-      shoot1[the_letter].style.display = "none";
-      
-      shoot2[random].style.display = "none";
-      
-    }
+    shoot2[random].style.display = "none";
+  }
 
-    if (x <= 25) {
+  if (x <= 25) {
+    shoot2[random].style.display = "none";
+    random = Math.floor(Math.random() * 26);
+    x = 75;
+    shoot2[random].style.display = "block";
+  }
 
-        shoot2[random].style.display = "none";
-        random = Math.floor(Math.random() * 26);
-        x = 75;
-        shoot2[random].style.display = "block";
-    }
-
-    requestAnimationFrame(moveShoot);
+  requestAnimationFrame(moveShoot);
 }
-
-
-
 
 moveShoot();
 
-
-
-
-
-
-let x2 = 25
-
-
-
-
-
-
-
+let x2 = 25;
 
 function moveShootYou(shootNumber) {
+  x2 += 0.25;
 
-    x2 += 0.25;
+  shoot1[shootNumber].style.left = x2 + "%";
 
-    shoot1[shootNumber].style.left = x2 + "%";
+  if (x2 >= 75) {
+    shoot1[shootNumber].style.display = "none";
+    return;
+  }
 
-    if (x2 >= 75) {
-        shoot1[shootNumber].style.display = "none";
-        return;
-    }
-
-    requestAnimationFrame(() => moveShootYou(shootNumber));
+  requestAnimationFrame(() => moveShootYou(shootNumber));
 }
 
-
-const downtime = setInterval(() => {
-  
-
-}, 1000);
+const downtime = setInterval(() => {}, 1000);
 //clearInterval(downtime);
-    
 
-
-
-
-
-let save = []
+let save = [];
 document.addEventListener("keydown", (event) => {
   if (event.key === "ArrowRight") {
     if (the_letter < 25) {
@@ -89,13 +59,10 @@ document.addEventListener("keydown", (event) => {
 
       keys[the_letter].style.border = "solid";
       keys[the_letter - 1].style.border = "none";
-
-      
     }
   }
 
-if (event.key === "Enter") {
-
+  if (event.key === "Enter") {
     if (num > 0 && save[num - 1] === the_letter) {
       return;
     }
@@ -109,9 +76,7 @@ if (event.key === "Enter") {
     moveShootYou(save[num]);
 
     num++;
-}
-  
-
+  }
 
   if (event.key === "ArrowLeft") {
     if (the_letter > 0) {
@@ -120,12 +85,6 @@ if (event.key === "Enter") {
       keys[the_letter + 1].style.border = "none";
     }
   }
-
-
-
-
-
-
 });
 document.addEventListener("click", (event) => {
   imgno.style.left = `${event.clientX}px`;
@@ -133,43 +92,18 @@ document.addEventListener("click", (event) => {
   imgno.style.display = "block";
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function isTouching(shoot1Number, shoot2Number) {
+  if (shoot1Number < 0) {
+    return false;
+  }
 
-    if (shoot1Number < 0) {
-        return false;
-    }
+  let rectA = shoot1[shoot1Number].getBoundingClientRect();
+  let rectB = shoot2[shoot2Number].getBoundingClientRect();
 
-    let rectA = shoot1[shoot1Number].getBoundingClientRect();
-    let rectB = shoot2[shoot2Number].getBoundingClientRect();
-
-    return !(
-        rectA.right < rectB.left ||
-        rectA.left > rectB.right ||
-        rectA.bottom < rectB.top ||
-        rectA.top > rectB.bottom
-    );
+  return !(
+    rectA.right < rectB.left ||
+    rectA.left > rectB.right ||
+    rectA.bottom < rectB.top ||
+    rectA.top > rectB.bottom
+  );
 }
