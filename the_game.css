@@ -4,6 +4,8 @@ body{
     cursor: none;
     margin: 0;
      overflow-x: hidden;
+          overflow-y: hidden;
+
 }
 #sna{
     background-color: #ffce84;
