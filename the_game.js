@@ -1,12 +1,13 @@
-
+let imgno = document.getElementById("no")
 const shoot2 = document.querySelectorAll(".the_shoot2");
+const shoot1 = document.querySelectorAll(".the_shoot");
 let keys = document.querySelectorAll(".keys");
 let the_letter = -1;
-let x = 70;
+let x = 75;
 let random = Math.floor(
   Math.random() * 26
 )
-
+let x2 = 25
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "ArrowRight") {
@@ -27,8 +28,7 @@ document.addEventListener("keydown", (event) => {
     event.key === "Enter" &&
     the_letter != -1 &&
     the_letter != 26 &&
-    the_letter != 27 &&
-    the_letter != 28
+    the_letter != 27 
   ) {
     savedletters[letternum] = keys[the_letter].textContent;
     letternum++;
@@ -36,7 +36,7 @@ document.addEventListener("keydown", (event) => {
     wroten.textContent = savedletters.join("");
   }
   //next
-  if (event.key === "Enter" && the_letter == 27) {
+  if (event.key === "Enter" && the_letter == 26) {
     if (wroten.textContent == randwords[random]) {
       correct ++;
       console.log(`corrict = ${correct}`);
@@ -63,11 +63,7 @@ console.log(`WRONGE = ${wrong}`)
     }
   }
 
-//del
 
-if(event.key == "Enter" && the_letter == 26){
-  wroten.textContent = wroten.textContent.slice(0, -1)
-}
 
 
 
@@ -93,16 +89,35 @@ document.addEventListener("click", (event) => {
 
 
 
+function shoot (){
+    document.addEventListener("keydown", (event) => {
 
+      if(event.key == ""){}
+
+
+
+
+
+
+
+
+
+
+
+
+    })
+}
 
 
 
 
 
 function moveShoot() {
-    x -= 0.5;
+    x -= 0.25;
     shoot2[random].style.left = x + "%";
-
+if (x > 25){
+    shoot2[random].style.display = "block";
+}
 if(x == 25){
   shoot2[random].style.display = "none"
 }

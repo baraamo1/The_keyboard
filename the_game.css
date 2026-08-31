@@ -86,17 +86,22 @@ transform: translateX(-50%);
 
 }
 
-
+#no{
+    width: 40px;
+    display: none;
+    position: absolute;
+    transform: translate(-50% ,-50%);
+}
 
 .the_shoot{
         width: 70px;
     position: absolute;
-    display: block;
+    display: none;
 }
 .the_shoot2 {
     width: 70px;
     position: absolute;
-    display: block;
+    display: none;
 }
 
 
