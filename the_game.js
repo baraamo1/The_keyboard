@@ -11,22 +11,29 @@ let random = Math.floor(
 function moveShoot() {
 
     x -= 0.25;
-    shoot2[random].style.left = x + "%";
-if (x > 25){
-    shoot2[random].style.display = "block";
-}
-if(x == 25){
-  shoot2[random].style.display = "none"
-       random = Math.floor(
-  Math.random() * 26
-)
-x = 75 
-}
 
-shoot2[random].style.display = "block";
+    shoot2[random].style.left = x + "%";
+
+    if (x > 25 && !isTouching(the_letter, random)) {
+     shoot2[random].style.display = "block";
+    }
+
+    if (isTouching(the_letter, random)) {
+      shoot1[the_letter].style.display = "none";
+      
+      shoot2[random].style.display = "none";
+      
+    }
+
+    if (x <= 25) {
+
+        shoot2[random].style.display = "none";
+        random = Math.floor(Math.random() * 26);
+        x = 75;
+        shoot2[random].style.display = "block";
+    }
 
     requestAnimationFrame(moveShoot);
-
 }
 
 
@@ -148,3 +155,21 @@ document.addEventListener("click", (event) => {
 
 
 
+
+
+function isTouching(shoot1Number, shoot2Number) {
+
+    if (shoot1Number < 0) {
+        return false;
+    }
+
+    let rectA = shoot1[shoot1Number].getBoundingClientRect();
+    let rectB = shoot2[shoot2Number].getBoundingClientRect();
+
+    return !(
+        rectA.right < rectB.left ||
+        rectA.left > rectB.right ||
+        rectA.bottom < rectB.top ||
+        rectA.top > rectB.bottom
+    );
+}
