@@ -12,9 +12,9 @@ let allll = document.getElementById("allll")
 let the_letter = -1;
 let boom1 = document.getElementById("boom1")
 let boom2 = document.getElementById("boom2")
-
-
-
+let res = document.getElementById("res")
+let point = document.getElementById("point")
+let back = document.getElementById("back")
 
 let x = 75;
 let sec = 3;
@@ -73,6 +73,12 @@ if (shootNumber === random && isTouching(shootNumber, random)) {
 
 let save = [];
 document.addEventListener("keydown", (event) => {
+
+
+           if (event.key == "Enter" && down == 0){
+      window.location.href = "game.html"
+     }
+
   if (event.key === "ArrowRight") {
     if (the_letter < 25) {
       the_letter++;
@@ -90,12 +96,14 @@ document.addEventListener("keydown", (event) => {
     if (num > 0) {
       shoot1[save[num - 1]].style.display = "none";
     }
-
+     
     save[num] = the_letter;
     x2 = 25;
     moveShootYou(save[num]);
 
     num++;
+
+
   }
 
   if (event.key === "ArrowLeft") {
@@ -105,6 +113,9 @@ document.addEventListener("keydown", (event) => {
       keys[the_letter + 1].style.border = "none";
     }
   }
+
+
+
 });
 document.addEventListener("click", (event) => {
   imgno.style.left = `${event.clientX}px`;
@@ -152,6 +163,8 @@ const timer = setInterval(() => {
   }
 }, 1000);
 timere.textContent = down;
+
+
 const downtime = setInterval(() => {
 
   if (sec == 0 && down > 0) {
@@ -160,7 +173,24 @@ const downtime = setInterval(() => {
   }
 
   if (down == 0) {
+           boom2.style.display = "none"
+     boom1.style.display = "none"
+      allll.style.display = "none"
+
+      keyboard.style.display = "none"
+      res.style.display = "block"
+      point.textContent = `You got ${correct} points`
+      point.style.display = "block"
+
     clearInterval(downtime);
   }
 
 }, 1000);
+
+
+
+
+
+      
+       
+      

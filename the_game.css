@@ -81,6 +81,28 @@ transform: translateX(-50%);
     transform: scaleX(-1);
 
 }
+#back{
+        border: 10px solid;
+width: fit-content;
+padding:10px;
+border-radius: 15px;
+background-color: #ffe9c7;
+margin: 10px;
+font-size: 20px;
+}
+#res{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffce84;
+    border: solid ;
+    padding: 90px;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 30px;
+    display: none;
+}
 #timere{
     border:2px solid;
     width: fit-content;
