@@ -77,6 +77,24 @@ transform: translateX(-50%);
     display: flex;
     gap:10px
 }
+#all_the_shoots {
+    display: flex;
+    justify-content: space-around;
+
+    position: absolute;
+    bottom: 220px;
+    width: 100%;
+
+}
+
+
+
 .the_shoot{
+        width: 70px;
+    position: absolute;
+
+}
+.the_shoot2 {
     width: 70px;
+    position: absolute;
 }
