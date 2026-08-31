@@ -1,9 +1,11 @@
 
-
+const shoot2 = document.querySelectorAll(".the_shoot2");
 let keys = document.querySelectorAll(".keys");
 let the_letter = -1;
-
-
+let x = 70;
+let random = Math.floor(
+  Math.random() * 26
+)
 
 
 document.addEventListener("keydown", (event) => {
@@ -76,3 +78,38 @@ document.addEventListener("click", (event) => {
   imgno.style.top = `${event.clientY}px`;
   imgno.style.display = "block";
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function moveShoot() {
+    x -= 0.5;
+    shoot2[random].style.left = x + "%";
+
+if(x == 25){
+  shoot2[random].style.display = "none"
+}
+
+
+
+    requestAnimationFrame(moveShoot);
+}
+
+moveShoot();

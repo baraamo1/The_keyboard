@@ -80,9 +80,8 @@ transform: translateX(-50%);
 #all_the_shoots {
     display: flex;
     justify-content: space-around;
-
     position: absolute;
-    bottom: 220px;
+    bottom: 300px;
     width: 100%;
 
 }
@@ -92,9 +91,12 @@ transform: translateX(-50%);
 .the_shoot{
         width: 70px;
     position: absolute;
-
+    display: block;
 }
 .the_shoot2 {
     width: 70px;
     position: absolute;
+    display: block;
 }
+
+
