@@ -149,8 +149,15 @@ console.log(`WRONGE = ${wrong}`)
 
 //del
 
-if(event.key == "Enter" && the_letter == 26){
-  wroten.textContent = wroten.textContent.slice(0, -1)
+if (event.key == "Enter" && the_letter == 26) {
+
+    if (letternum > 0) {
+        letternum--;
+
+        savedletters.pop();
+
+        wroten.textContent = savedletters.join("");
+    }
 }
 
 
